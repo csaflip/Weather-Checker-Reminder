@@ -1,0 +1,12 @@
+{
+    "users": [
+        {
+            "Bob": "phonenumber@mycarrier.net",
+            "John": "phonenumber@mycarrier.net",
+            "Alice": "phonenumber@mycarrier.net"
+        }
+    ],
+    "email": "myemail@gmail.com",
+    "pass": "myemailpassword",
+    "port": 465
+}
