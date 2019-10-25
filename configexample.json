@@ -8,5 +8,7 @@
     ],
     "email": "myemail@gmail.com",
     "pass": "myemailpassword",
-    "port": 465
+    "port": 465,
+    "url_1": "first url as outlined in README.md",
+    "url_2": "second url as outlined in README.md"
 }

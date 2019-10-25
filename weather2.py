@@ -6,8 +6,16 @@ from datetime import date
 import requests
 import json
 
+with open('config.json') as infile:
+    data = json.load(infile) #FIXTHIS
+    users = data['users'][0]
+    email = data['email']
+    password = data['pass']
+    port = data['port']
+    url_1 = data['url_1']
+    url_2 = data['url_2']
 
-page = requests.get("https://forecast.weather.gov/MapClick.php?lat=29.652&lon=-82.3228")
+page = requests.get(url_1)
 soup = BeautifulSoup(page.content, 'html.parser')
 today = soup.find(id="seven-day-forecast")
 fore = today.find_all(class_="tombstone-container")
@@ -20,9 +28,9 @@ soup = BeautifulSoup(page.content, 'html.parser')
 precips = soup.findAll(color='#996633')
 umbrella = False
 first_rain = 7
-for x in range(1,12):
+for x in range(1, 12):
     print(precips[x].text)
-for x in range(1,12): #only precips for the current day
+for x in range(1, 12): #only precips for the current day
     if int(precips[x].text) >= 25:
         first_rain += x
         umbrella = True
@@ -44,12 +52,7 @@ else:
 print(desc)
 
 
-with open('config.json') as infile:
-    data = json.load(infile) #FIXTHIS
-    users = data['users'][0]
-    email = data['email']
-    password = data['pass']
-    port = data['port']
+
 
 
 context = ssl.create_default_context()
