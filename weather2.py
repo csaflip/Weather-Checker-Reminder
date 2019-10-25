@@ -23,7 +23,7 @@ rtoday = fore[0]
 img = rtoday.find("img")
 desc = img['title']
 
-page = requests.get('https://forecast.weather.gov/MapClick.php?lat=29.652&lon=-82.3228&unit=0&lg=english&FcstType=digital')
+page = requests.get(url_2)
 soup = BeautifulSoup(page.content, 'html.parser')
 precips = soup.findAll(color='#996633')
 umbrella = False
