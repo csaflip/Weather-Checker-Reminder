@@ -7,7 +7,7 @@ import requests
 import json
 
 with open('config.json') as infile:
-    data = json.load(infile) #FIXTHIS
+    data = json.load(infile)
     users = data['users'][0]
     email = data['email']
     password = data['pass']
@@ -50,10 +50,6 @@ if umbrella:
 else:
     desc = "\nToday is " + str(date.today()) + "\n" + desc
 print(desc)
-
-
-
-
 
 context = ssl.create_default_context()
 msg = desc
